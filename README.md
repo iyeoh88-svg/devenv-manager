@@ -1,12 +1,12 @@
 # DevEnv Manager
 
-```markdown
+markdown
 ![Version](https://img.shields.io/github/v/release/iyeoh88-svg/devenv-manager)
 ![Downloads](https://img.shields.io/github/downloads/iyeoh88-svg/devenv-manager/total)
 ![Stars](https://img.shields.io/github/stars/iyeoh88-svg/devenv-manager)
 ![License](https://img.shields.io/github/license/iyeoh88-svg/devenv-manager)
 ![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey)
-```
+
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey.svg)
