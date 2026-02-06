@@ -1,6 +1,5 @@
 # DevEnv Manager
 
-markdown
 ![Version](https://img.shields.io/github/v/release/iyeoh88-svg/devenv-manager)
 ![Downloads](https://img.shields.io/github/downloads/iyeoh88-svg/devenv-manager/total)
 ![Stars](https://img.shields.io/github/stars/iyeoh88-svg/devenv-manager)
