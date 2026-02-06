@@ -15,15 +15,29 @@ SCRIPT_NAME="devenv-manager"
 GITHUB_REPO="iyeoh88-svg/${SCRIPT_NAME}"
 UPDATE_CHECK_URL="https://api.github.com/repos/${GITHUB_REPO}/releases/latest"
 
-# Color codes
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-MAGENTA='\033[0;35m'
-CYAN='\033[0;36m'
-NC='\033[0m' # No Color
-BOLD='\033[1m'
+# Color codes - with terminal detection
+# Disable colors if NO_COLOR is set, or if output is redirected/piped
+if [[ -n "${NO_COLOR:-}" ]] || [[ ! -t 1 ]]; then
+    # No color - use empty strings
+    RED=''
+    GREEN=''
+    YELLOW=''
+    BLUE=''
+    MAGENTA=''
+    CYAN=''
+    NC=''
+    BOLD=''
+else
+    # Use colors
+    RED='\033[0;31m'
+    GREEN='\033[0;32m'
+    YELLOW='\033[1;33m'
+    BLUE='\033[0;34m'
+    MAGENTA='\033[0;35m'
+    CYAN='\033[0;36m'
+    NC='\033[0m' # No Color
+    BOLD='\033[1m'
+fi
 
 # Configuration
 CONFIG_DIR="${HOME}/.config/devenv-manager"
@@ -800,37 +814,35 @@ show_version() {
 }
 
 show_help() {
-    cat << EOF
-${BOLD}${SCRIPT_NAME}${NC} - Development Environment Manager
-Version: ${SCRIPT_VERSION}
-
-${BOLD}USAGE:${NC}
-    ${SCRIPT_NAME} [COMMAND] [OPTIONS]
-
-${BOLD}COMMANDS:${NC}
-    ${GREEN}check${NC}           Check git repository health
-    ${GREEN}clean${NC}           Clean git repository
-    ${GREEN}setup${NC}           Setup development environment
-    ${GREEN}diagnose${NC}        Diagnose environment issues
-    ${GREEN}create${NC}          Create new project from template
-    ${GREEN}cleanup${NC}         Clean system caches and temp files
-    ${GREEN}config${NC}          Configure ${SCRIPT_NAME}
-    ${GREEN}update${NC}          Check for updates
-    ${GREEN}version${NC}         Show version information
-    ${GREEN}help${NC}            Show this help message
-
-${BOLD}EXAMPLES:${NC}
-    ${SCRIPT_NAME} check        # Check current git repository
-    ${SCRIPT_NAME} setup        # Setup dev environment
-    ${SCRIPT_NAME} create       # Create new project
-    ${SCRIPT_NAME} update       # Check for updates
-
-${BOLD}DOCUMENTATION:${NC}
-    Visit: https://github.com/${GITHUB_REPO}
-
-${BOLD}REPORT ISSUES:${NC}
-    https://github.com/${GITHUB_REPO}/issues
-EOF
+    echo -e "${BOLD}${SCRIPT_NAME}${NC} - Development Environment Manager"
+    echo "Version: ${SCRIPT_VERSION}"
+    echo ""
+    echo -e "${BOLD}USAGE:${NC}"
+    echo "    ${SCRIPT_NAME} [COMMAND] [OPTIONS]"
+    echo ""
+    echo -e "${BOLD}COMMANDS:${NC}"
+    echo -e "    ${GREEN}check${NC}           Check git repository health"
+    echo -e "    ${GREEN}clean${NC}           Clean git repository"
+    echo -e "    ${GREEN}setup${NC}           Setup development environment"
+    echo -e "    ${GREEN}diagnose${NC}        Diagnose environment issues"
+    echo -e "    ${GREEN}create${NC}          Create new project from template"
+    echo -e "    ${GREEN}cleanup${NC}         Clean system caches and temp files"
+    echo -e "    ${GREEN}config${NC}          Configure ${SCRIPT_NAME}"
+    echo -e "    ${GREEN}update${NC}          Check for updates"
+    echo -e "    ${GREEN}version${NC}         Show version information"
+    echo -e "    ${GREEN}help${NC}            Show this help message"
+    echo ""
+    echo -e "${BOLD}EXAMPLES:${NC}"
+    echo "    ${SCRIPT_NAME} check        # Check current git repository"
+    echo "    ${SCRIPT_NAME} setup        # Setup dev environment"
+    echo "    ${SCRIPT_NAME} create       # Create new project"
+    echo "    ${SCRIPT_NAME} update       # Check for updates"
+    echo ""
+    echo -e "${BOLD}DOCUMENTATION:${NC}"
+    echo "    Visit: https://github.com/${GITHUB_REPO}"
+    echo ""
+    echo -e "${BOLD}REPORT ISSUES:${NC}"
+    echo "    https://github.com/${GITHUB_REPO}/issues"
 }
 
 #############################################
