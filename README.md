@@ -1,11 +1,10 @@
 # DevEnv Manager
 
-![Version](https://img.shields.io/github/v/release/iyeoh88-svg/devenv-manager?style=flat-square)
-![Downloads](https://img.shields.io/github/downloads/iyeoh88-svg/devenv-manager/total?style=flat-square)
+![Version](https://img.shields.io/github/v/release/iyeoh88-svg/devenv-manager)
 ![Stars](https://img.shields.io/github/stars/iyeoh88-svg/devenv-manager)
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Issues](https://img.shields.io/github/issues/iyeoh88-svg/devenv-manager)
+![License](https://img.shields.io/github/license/iyeoh88-svg/devenv-manager)
+![Last Commit](https://img.shields.io/github/last-commit/iyeoh88-svg/devenv-manager)
 
 ## 🎯 What Problem Does This Solve?
 
